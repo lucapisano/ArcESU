@@ -1,7 +1,7 @@
 ﻿#The aim of this script is to provide an automatic way of provisioning ESU licenses querying eligible VMs
 #The logic is to provision 1 license per each VM and writing the VM hostname inside the license name. Therefore you can easily associate a license with the corresponding VM.
 #After provisioning, you can use the ESULink script to associate each license to the corresponding VM
-#For info, please contact: lucapisano@microsoft.com
+#For info, please contact: luca@lucapisano.it
 
 Install-Module Az.ResourceGraph -Force -Scope CurrentUser
 #Connect-AzAccount #needed if the current user has not yet logged on or the token has expired
