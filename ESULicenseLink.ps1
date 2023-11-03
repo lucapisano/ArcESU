@@ -1,6 +1,6 @@
 ﻿#The aim of this script is to provide an automatic way of linking an existing ESU license with the corresponding VM
 #To perform license provisioning, you can use the ESULicenseProvisioning script
-#For info, please contact: lucapisano@microsoft.com
+#For info, please contact: luca@lucapisano.it
 
 Install-Module Az.ResourceGraph -Force -Scope CurrentUser
 #Connect-AzAccount #only needed if the current user has not yet logged on or the token has expired
