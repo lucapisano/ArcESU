@@ -7,3 +7,5 @@ The aim of this repo is to provide an automatic way of provisioning ESU licenses
 4. Review and run ESULicenseLink.ps1 to associate each license to the corresponding VM. Make sure to change the $subscriptionId and $resourceGroupName before running the script.
 
 Now you can enjoy Extended Security Updates on Windows Server 2012 VMs!
+
+# Attention: The Graph API has a limit of 1000 results, if you have more than 1000 VMs onboarded to ARC you may change the Graph query
