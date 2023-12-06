@@ -61,7 +61,7 @@ Function Provision-License {
  }
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
 Import-Module Az.ResourceGraph -Scope Local
-$searchResult = Search-AzGraph -Query "resources | where type =~ 'microsoft.hybridcompute/machines' | extend esuEligibility = properties.licenseProfile.esuProfile.esuEligibility | extend os = properties.osSku | extend status = properties.licenseProfile.esuProfile.licenseAssignmentState | extend cores = properties.detectedProperties.logicalCoreCount | where esuEligibility =~ 'Eligible' |project name, status, os, id, subscriptionId, resourceGroup, esuEligibility, cores"
+$searchResult = Search-AzGraph -First 1000 -Query "resources | where type =~ 'microsoft.hybridcompute/machines' | extend esuEligibility = properties.licenseProfile.esuProfile.esuEligibility | extend os = properties.osSku | extend status = properties.licenseProfile.esuProfile.licenseAssignmentState | extend cores = properties.detectedProperties.logicalCoreCount | where esuEligibility =~ 'Eligible' |project name, status, os, id, subscriptionId, resourceGroup, esuEligibility, cores"
 foreach($vm in $searchResult)
 {
     $vmName =  $vm | Select -ExpandProperty name
